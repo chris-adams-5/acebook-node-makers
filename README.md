@@ -44,12 +44,12 @@ REPLACE THIS TEXT WITH A LINK TO YOUR CARD WALL
 6. Install MongoDB
    ```
    brew tap mongodb/brew
-   brew install mongodb-community@8.0
+   brew install mongodb-community@7.0
    ```
-   *Note:* If you see a message that says `If you need to have mongodb-community@8.0 first in your PATH, run:`, follow the instruction. Restart your terminal after this.
+   *Note:* If you see a message that says `If you need to have mongodb-community@7.0 first in your PATH, run:`, follow the instruction. Restart your terminal after this.
 7. Start MongoDB
    ```
-   brew services start mongodb-community@8.0
+   brew services start mongodb-community@7.0
    ```
 
 ### Start
