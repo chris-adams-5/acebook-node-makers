@@ -33,9 +33,9 @@ REPLACE THIS TEXT WITH A LINK TO YOUR CARD WALL
 
 ### Set up your project
 
-1. Fork this repository
-2. Rename your fork to `acebook-<team name>`
-3. Clone your fork to your local machine
+1. Click "Use this template" to create a copy of this repo on your GitHub account
+2. Rename your repo to `acebook-<team name>
+3. Clone your repo to your local machine
 4. Install Node.js dependencies
    ```
    npm install
