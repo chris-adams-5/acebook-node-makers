@@ -15,7 +15,6 @@ jobs:
       matrix:
         node-version: [26]
         mongodb-version: ['7.0']
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
 
