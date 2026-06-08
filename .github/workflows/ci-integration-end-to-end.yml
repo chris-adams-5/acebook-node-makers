@@ -12,9 +12,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Git checkout
+      uses: actions/checkout@v4
 
-      - name: end to end and integration tests
-        uses: cypress-io/github-action@v7
-        with:
-          start: npm run start:test
-          wait-on: http://localhost:3030record
+    - name: Start MongoDB
+      uses: supercharge/mongodb-github-action@1.12.1
+      with:
+        mongodb-version: ${{ matrix.mongodb-version }}
+
+
+    - name: end to end and integration tests
+      uses: cypress-io/github-action@v7
+      with:
+        start: npm run start:test
+        wait-on: http://localhost:3030record
