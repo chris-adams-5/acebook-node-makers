@@ -47,5 +47,9 @@ jobs:
     - run: npm run test:unit 
       name: unit tests
 
-    - run: npm run test:integration 
-      name: integration tests 
+    - name: integration tests
+      uses: cypress-io/github-action@v1
+      with:
+        build: npm run build
+        start: npm start
+        wait-on: http://localhost:3030
