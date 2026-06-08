@@ -29,4 +29,4 @@ jobs:
       uses: cypress-io/github-action@v7
       with:
         start: npm run start:test
-        wait-on: http://localhost:3030record
+        wait-on: http://localhost:3030
