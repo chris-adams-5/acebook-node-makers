@@ -11,10 +11,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-      machines: [1, 2, 3]
-
     steps:
 
       - name: end to end and integration tests
