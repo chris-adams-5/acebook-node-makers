@@ -48,7 +48,7 @@ jobs:
       name: unit tests
 
     - name: integration tests
-      uses: cypress-io/github-action@v1
+      uses: cypress-io/github-action@v7
       with:
         build: npm run build
         start: npm start
