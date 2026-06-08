@@ -1,0 +1,24 @@
+name: CI Integration and End to End
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+      mainmachines: [1, 2, 3]
+
+    steps:
+
+      - name: end to end and integration tests
+        uses: cypress-io/github-action@v7
+        with:
+          start: npm run start:test
+          wait-on: http://localhost:3030record
