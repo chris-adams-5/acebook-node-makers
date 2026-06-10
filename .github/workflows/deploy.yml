@@ -12,13 +12,14 @@ jobs:
   call-lint-and-unit-tests:
     uses: ./.github/workflows/lint-unit.yml
 
-
   call-integration-tests:
     uses: ./.github/workflows/integration-end-to-end.yml
 
   push-to-S3:
     # needs: [call-lint-and-unit-tests, call-integration-tests]
     runs-on: ubuntu-latest
+    environment: prod
+
     steps:
       - uses: actions/checkout@v6
         name: Checkout Repository
