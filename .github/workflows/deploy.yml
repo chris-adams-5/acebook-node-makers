@@ -32,4 +32,4 @@ jobs:
         
       - name: Upload to s3
         working-directory: .
-        run: aws s3 cp . s3://${{secrets.AWS_BUCKET}}/chris-node-code
+        run: aws s3 cp . ${{secrets.S3_URI}}
