@@ -9,7 +9,7 @@ hooks:
       timeout: 300
       runas: root
   InstallMongoDB:
-    - location: scripts/change_permissions.sh
+    - location: scripts/install_mongoDB.sh
       timeout: 300
       runas: root
   ApplicationStart:
