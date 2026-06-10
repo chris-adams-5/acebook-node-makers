@@ -15,7 +15,7 @@ jobs:
   call-integration-tests:
     uses: ./.github/workflows/integration-end-to-end.yml
 
-  push-to-S3:
+  copy-to-S3:
     needs: [call-lint-and-unit-tests, call-integration-tests]
     runs-on: ubuntu-latest
     environment: prod
@@ -29,7 +29,31 @@ jobs:
           aws-access-key-id: ${{secrets.AWS_KEY}}
           aws-secret-access-key: ${{secrets.AWS_SECRET_KEY}}
           aws-region: 'eu-west-2'
+
+      - name: zip
+        working-directory: .
+        run: zip -r aacebook.zip  . -x 'node_modules/*'
         
       - name: Upload to s3
         working-directory: .
-        run: aws s3 cp . ${{secrets.S3_URI}} --recursive --exclude 'node_modules/*'
+        run: aws s3 cp aacebook.zip ${{secrets.S3_URI}}
+
+  deploy:
+    needs: [ copy-to-S3 ]
+    runs-on: ubuntu-latest
+    environment: prod
+
+    steps:
+      - uses: actions/checkout@v6
+        name: Checkout Repository
+
+      - uses: aws-actions/configure-aws-credentials@v6.1.0
+        with:
+          role-to-assume: 
+          aws-access-key-id: ${{secrets.AWS_KEY}}
+          aws-secret-access-key: ${{secrets.AWS_SECRET_KEY}}
+          aws-region: 'eu-west-2'
+      
+      - run: aws deploy create-deployment
+
+    
