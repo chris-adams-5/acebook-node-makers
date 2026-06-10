@@ -7,6 +7,7 @@ jobs:
   linting_unit:
 
     runs-on: ubuntu-latest
+    environment: prod
 
     strategy:
       matrix:
