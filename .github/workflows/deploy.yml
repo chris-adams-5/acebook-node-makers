@@ -32,4 +32,4 @@ jobs:
         
       - name: Upload to s3
         working-directory: .
-        run: aws s3 cp . --recursive ${{secrets.S3_URI}}
+        run: aws s3 cp. ${{secrets.S3_URI}} --recursive --exclude 'node_modules/*'
