@@ -27,7 +27,7 @@ jobs:
         with:
           aws_key_id: ${{ secrets.AWS_KEY }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_KEY}}
-          aws_region: 'eu-west-2'
+          aws-region: 'eu-west-2'
         
       - name: Upload to s3
         working-directory: .
