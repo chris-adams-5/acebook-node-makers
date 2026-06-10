@@ -1,13 +1,10 @@
-name: CI Linting and Unit tests
+name: Linting and Unit tests
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: 
+  workflow_call:
 
 jobs:
-  build:
+  linting_unit:
 
     runs-on: ubuntu-latest
 
