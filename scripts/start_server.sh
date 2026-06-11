@@ -1,2 +1,4 @@
 #!/bin/bash
-sudo systemctl restart acebook
+sudo systemctl daemon-reload
+
+systemctl restart acebook
