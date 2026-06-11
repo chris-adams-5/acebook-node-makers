@@ -5,11 +5,11 @@ files:
     destination: /var/www/my-app 
 hooks:
   BeforeInstall:
-    - location: scripts/install_node.sh
+    - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/install_mongoDB.sh
+    - location: scripts/install_node.sh
       timeout: 300
       runas: root
   ApplicationStart:
