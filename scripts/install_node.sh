@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /var/www/my-app 
+cd /var/www/acebook
 npm install
