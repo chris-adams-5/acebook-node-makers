@@ -25,5 +25,5 @@ jobs:
     - name: end to end and integration tests
       uses: cypress-io/github-action@v7
       with:
-        start: npm run start:test
+        start: npm run test:integration
         wait-on: http://localhost:3030
